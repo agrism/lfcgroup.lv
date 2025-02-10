@@ -8,6 +8,7 @@
     <meta name="keywords" content="business intelligence, data automation, ERP integration, process optimization, enterprise solutions, market analytics">
     <meta property="og:title" content="Enterprise Intelligence Solutions">
     <meta property="og:description" content="Transform your business operations with automated data analytics and process optimization">
+    <link rel="stylesheet" href="https://rsms.me/inter/inter.css">
     @vite('resources/css/app.css')
 </head>
 <body class="bg-gray-100">
