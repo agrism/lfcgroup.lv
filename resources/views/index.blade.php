@@ -24,6 +24,11 @@
 </nav>
 
 <main class="max-w-6xl mx-auto mt-10 px-4">
+
+    @if(session('success'))
+        <div class="text-green-500">{{ session('success') }}</div>
+    @endif
+
     <div class="bg-white rounded-lg shadow-xl p-6 md:p-10">
         <h1 class="text-4xl font-bold text-gray-800 mb-6">Business Process Solutions</h1>
         <p class="text-gray-600 text-lg mb-8">Accelerating business growth through intelligent automation and data-driven solutions.</p>
@@ -84,26 +89,45 @@
             </div>
         </div>
 
-        <form class="space-y-6">
+        <form class="space-y-6" id="contactForm" action="{{route('request-consultation')}}" method="POST">
+            @csrf
+            @if(session('success'))
+                <div class="bg-green-100 border border-green-400 text-green-700 px-4 py-3 rounded relative mb-4">
+                    {{ session('success') }}
+                </div>
+            @endif
             <div>
-                <label class="block text-gray-700 mb-2" for="name">Name</label>
-                <input type="text" id="name" class="w-full px-4 py-2 border rounded-lg focus:outline-none focus:border-blue-500">
+                <label class="block text-gray-700 mb-2" for="name">Name <i class="text-red-500">*</i></label>
+                <input type="text" id="name" name="name" value="{{ old('name') }}" class="w-full px-4 py-2 border rounded-lg focus:outline-none focus:border-blue-500">
+                @error('name')
+                    <span class="text-red-500 text-sm">{{ $message }}</span>
+                @enderror
             </div>
             <div>
-                <label class="block text-gray-700 mb-2" for="email">Email</label>
-                <input type="email" id="email" class="w-full px-4 py-2 border rounded-lg focus:outline-none focus:border-blue-500">
+                <label class="block text-gray-700 mb-2" for="email">Email <i class="text-red-500">*</i></label>
+                <input type="email" id="email" name="email" value="{{ old('email') }}" class="w-full px-4 py-2 border rounded-lg focus:outline-none focus:border-blue-500">
+                @error('email')
+                <span class="text-red-500 text-sm">{{ $message }}</span>
+                @enderror
             </div>
             <div>
-                <label class="block text-gray-700 mb-2" for="service">Service Required</label>
-                <select id="service" class="w-full px-4 py-2 border rounded-lg focus:outline-none focus:border-blue-500">
-                    <option>Web Scraping Solutions</option>
-                    <option>Business Process Automation</option>
-                    <option>ERP Systems Integration</option>
+                <label class="block text-gray-700 mb-2" for="service">Service Required <i class="text-red-500">*</i></label>
+                <select id="subject" name="subject" class="w-full px-4 py-2 border rounded-lg focus:outline-none focus:border-blue-500">
+                    <option @if(old('subject') == 'Web Scraping Solutions') selected @endif>Web Scraping Solutions</option>
+                    <option @if(old('subject') == 'Business Process Automation') selected @endif>Business Process Automation</option>
+                    <option @if(old('subject') == 'ERP Systems Integration') selected @endif>ERP Systems Integration</option>
+                    <option @if(old('subject') == 'Other') selected @endif>Other</option>
                 </select>
+                @error('subject')
+                <span class="text-red-500 text-sm">{{ $message }}</span>
+                @enderror
             </div>
             <div>
-                <label class="block text-gray-700 mb-2" for="message">Project Details</label>
-                <textarea id="message" rows="4" class="w-full px-4 py-2 border rounded-lg focus:outline-none focus:border-blue-500"></textarea>
+                <label class="block text-gray-700 mb-2" for="message">Project Details <i class="text-red-500">*</i></label>
+                <textarea id="message" name="message" rows="4" class="w-full px-4 py-2 border rounded-lg focus:outline-none focus:border-blue-500">{{ old('message') }}</textarea>
+                @error('message')
+                <span class="text-red-500 text-sm">{{ $message }}</span>
+                @enderror
             </div>
             <button type="submit" class="bg-blue-500 text-white px-6 py-2 rounded-lg hover:bg-blue-600 transition-colors">Request Consultation</button>
         </form>
@@ -115,5 +139,11 @@
         <p>&copy; {{\Carbon\Carbon::now()->year}} LFC Group. All rights reserved.</p>
     </div>
 </footer>
+
+@if(session('success') || $errors->any())
+    <script>
+        window.location.hash = '#contactForm';
+    </script>
+@endif
 </body>
 </html>
