@@ -41,7 +41,7 @@
 {{--        </div>--}}
 
         <div class="space-y-8 mb-12">
-            <div class="bg-gray-50 p-6 rounded-lg">
+            <div class="bg-gray-50 p-6 rounded-lg hover:border">
                 <h3 class="font-semibold text-xl mb-3">Web Scraping Solutions</h3>
                 <p class="text-gray-600 mb-4">Transform unstructured web data into actionable business insights. Our advanced web scraping services deliver:</p>
                 <ul class="list-disc pl-6 space-y-2 text-gray-600">
@@ -51,7 +51,7 @@
                     <li>Large-scale web data harvesting</li>
                 </ul>
             </div>
-            <div class="bg-gray-50 p-6 rounded-lg">
+            <div class="bg-gray-50 p-6 rounded-lg hover:border">
                 <h3 class="font-semibold text-xl mb-3">Business Process Automation</h3>
                 <p class="text-gray-600 mb-4">Streamline your operations with intelligent automation solutions that drive efficiency:</p>
                 <ul class="list-disc pl-6 space-y-2 text-gray-600">
@@ -61,7 +61,7 @@
                     <li>Custom automation scripts and tools</li>
                 </ul>
             </div>
-            <div class="bg-gray-50 p-6 rounded-lg">
+            <div class="bg-gray-50 p-6 rounded-lg hover:border">
                 <h3 class="font-semibold text-xl mb-3">ERP Systems Integration</h3>
                 <p class="text-gray-600 mb-4">Comprehensive ERP solutions to unify your business processes:</p>
                 <ul class="list-disc pl-6 space-y-2 text-gray-600">
