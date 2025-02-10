@@ -25,10 +25,6 @@
 
 <main class="max-w-6xl mx-auto mt-10 px-4">
 
-    @if(session('success'))
-        <div class="text-green-500">{{ session('success') }}</div>
-    @endif
-
     <div class="bg-white rounded-lg shadow-xl p-6 md:p-10">
         <h1 class="text-4xl font-bold text-gray-800 mb-6">Business Process Solutions</h1>
         <p class="text-gray-600 text-lg mb-8">Accelerating business growth through intelligent automation and data-driven solutions.</p>
