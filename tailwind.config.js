@@ -14,6 +14,10 @@ export default {
                 sans: ['Inter', ...defaultTheme.fontFamily.sans],
             },
         },
+        screens: {
+            'max-sm': {'max': '639px'},
+            // ... other breakpoints
+        }
     },
     plugins: [],
 };
