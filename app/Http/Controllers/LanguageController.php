@@ -2,22 +2,21 @@
 
 namespace App\Http\Controllers;
 
+use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\App;
 use Illuminate\Support\Facades\Session;
-use Illuminate\View\View;
 
-class IndexController extends Controller
+class LanguageController extends Controller
 {
-    public function __invoke(Request $request, ?string $locale = null): View
+    public function __invoke(Request $request, string $locale): RedirectResponse
     {
-        if ($locale && in_array($locale, ['en', 'lv', 'ru'])) {
+        if (in_array($locale, ['en', 'lv', 'ru'])) {
             App::setLocale($locale);
             Session::put('locale', $locale);
             cookie()->queue('locale', $locale, 60 * 24 * 365);
         }
 
-        return view('index');
+        return redirect()->back();
     }
 }
-

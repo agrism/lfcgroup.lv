@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" class="scroll-smooth">
+<html lang="{{ str_replace('_', '-', app()->getLocale()) }}" class="scroll-smooth">
 <head>
     @if(app()->isProduction())
         <!-- Google tag (gtag.js) -->
@@ -18,11 +18,9 @@
     @endif
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Enterprise Intelligence Solutions</title>
-    <meta name="description"
-          content="Leading provider of business intelligence automation, ERP systems integration, and data-driven solutions. Transform your operations with enterprise-grade process optimization.">
-    <meta name="keywords"
-          content="business intelligence, data automation, ERP integration, process optimization, enterprise solutions, market analytics, web scraping">
+    <title>{{ __('site.meta.title') }}</title>
+    <meta name="description" content="{{ __('site.meta.description') }}">
+    <meta name="keywords" content="{{ __('site.meta.keywords') }}">
     
     <link rel="stylesheet" href="https://rsms.me/inter/inter.css">
     @vite(['resources/css/app.css', 'resources/js/app.js'])
@@ -31,5 +29,6 @@
     {{$slot}}
 </body>
 </html>
+
 
 

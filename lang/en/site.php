@@ -1,0 +1,170 @@
+<?php
+
+return [
+    'brand' => 'Enterprise Intelligence Solutions',
+    'tagline' => 'Solutions & Automation',
+    'meta' => [
+        'title' => 'Enterprise Intelligence Solutions',
+        'description' => 'Leading provider of business intelligence automation, ERP systems integration, and data-driven solutions. Transform your operations with enterprise-grade process optimization.',
+        'keywords' => 'business intelligence, data automation, ERP integration, process optimization, enterprise solutions, market analytics, web scraping',
+    ],
+    'nav' => [
+        'services' => 'Services',
+        'capabilities' => 'Capabilities',
+        'approach' => 'Approach',
+        'contact' => 'Contact',
+        'request_consultation' => 'Request Consultation',
+    ],
+    'hero' => [
+        'eyebrow' => 'Enterprise Intelligence Solutions',
+        'title' => 'Business Process Solutions',
+        'subtitle' => 'Accelerating business growth through intelligent automation and data-driven solutions.',
+        'cta_primary' => 'Request Consultation',
+        'cta_secondary' => 'View Services',
+        'pillars' => [
+            'architecture_label' => 'Architecture',
+            'architecture_desc' => 'Scalable Cloud Systems',
+            'automation_label' => 'Automation',
+            'automation_desc' => 'End-to-End Workflows',
+            'integration_label' => 'Integration',
+            'integration_desc' => 'Enterprise ERP & APIs',
+            'data_label' => 'Data Ingestion',
+            'data_desc' => 'High-Volume Web Harvesting',
+        ],
+    ],
+    'services' => [
+        'eyebrow' => 'Core Services',
+        'title' => 'Tailored Solutions for Enterprise Needs',
+        'inquire' => 'Inquire about this service',
+        
+        'scraping' => [
+            'title' => 'Web Scraping Solutions',
+            'description' => 'Transform unstructured web data into actionable business insights. Our advanced web scraping services deliver:',
+            'features' => [
+                'Real-time competitor price monitoring',
+                'Automated market research data collection',
+                'Custom data extraction APIs',
+                'Large-scale web data harvesting',
+                'Advanced proxy rotation systems',
+                'Sentiment analysis tools',
+                'Customizable data feeds',
+                'Automated quality assurance',
+                'Multi-format data delivery',
+                'Real-time market intelligence',
+                'Structured data parsing',
+                'Scalable cloud infrastructure',
+                'Custom reporting dashboards',
+                'Scheduled data collection',
+            ],
+        ],
+
+        'automation' => [
+            'title' => 'Business Process Automation',
+            'description' => 'Streamline your operations with intelligent automation solutions that drive efficiency:',
+            'features' => [
+                'Workflow automation and optimization',
+                'Document processing and management',
+                'Task scheduling and monitoring',
+                'Custom automation scripts and tools',
+                'Data integration and migration',
+                'Process mapping and analysis',
+                'API system integration',
+                'Automated reporting systems',
+                'Business rule automation',
+                'Form automation',
+                'Email automation',
+                'Database synchronization',
+                'Compliance monitoring',
+            ],
+        ],
+
+        'erp' => [
+            'title' => 'ERP Systems Integration',
+            'description' => 'Comprehensive ERP solutions to unify your business processes:',
+            'features' => [
+                'Custom ERP development and implementation',
+                'Legacy system integration',
+                'Real-time business analytics',
+                'Scalable cloud-based ERP solutions',
+                'Data migration services',
+                'API integrations',
+                'Performance optimization',
+                'Security implementation',
+                'Workflow automation',
+                'User training systems',
+                'Mobile ERP access',
+                'Custom reporting tools',
+                'Database management',
+                'System maintenance',
+            ],
+        ],
+    ],
+    'capabilities' => [
+        'eyebrow' => 'Capabilities',
+        'title' => 'Enterprise Engineering Standards',
+        'items' => [
+            [
+                'title' => 'High Reliability & Scalability',
+                'desc' => 'Infrastructure engineered to handle continuous data streams, large-scale extraction pipelines, and zero-downtime operation.',
+            ],
+            [
+                'title' => 'Enterprise Security & Compliance',
+                'desc' => 'Strict data protection, encrypted endpoints, and rigorous adherence to industry standards and client governance requirements.',
+            ],
+            [
+                'title' => 'Seamless Integration',
+                'desc' => 'Bespoke integrations that connect seamlessly with your legacy ERP systems, cloud applications, and data warehouses.',
+            ],
+        ],
+    ],
+    'process' => [
+        'eyebrow' => 'Delivery Model',
+        'title' => 'Our Implementation Process',
+        'steps' => [
+            [
+                'number' => '01',
+                'title' => 'Requirements & Analysis',
+                'desc' => 'Detailed assessment of your data structure, business workflows, and technical targets.',
+            ],
+            [
+                'number' => '02',
+                'title' => 'Solution Architecture',
+                'desc' => 'Design of custom extraction pipelines, automation scripts, and API connectors.',
+            ],
+            [
+                'number' => '03',
+                'title' => 'Implementation & Sync',
+                'desc' => 'System deployment, validation testing, and secure ERP integration.',
+            ],
+            [
+                'number' => '04',
+                'title' => 'Ongoing Maintenance',
+                'desc' => 'Continuous monitoring, quality assurance, and technical support.',
+            ],
+        ],
+    ],
+    'contact' => [
+        'eyebrow' => 'Get in Touch',
+        'title' => 'Contact Our IT Experts',
+        'subtitle' => 'Discuss your business process automation, web scraping, or ERP integration requirements with our technical team.',
+        'email_label' => 'Direct Email',
+        'sla' => 'We respond to enterprise inquiries within one business day.',
+        
+        'form_title' => 'Or Submit Request Form',
+        'name' => 'Name',
+        'email' => 'Email',
+        'service' => 'Service Required',
+        'service_options' => [
+            'Web Scraping Solutions' => 'Web Scraping Solutions',
+            'Business Process Automation' => 'Business Process Automation',
+            'ERP Systems Integration' => 'ERP Systems Integration',
+            'Other' => 'Other',
+        ],
+        'message' => 'Project Details',
+        'submit' => 'Request Consultation',
+        'success' => 'Message sent!',
+    ],
+    'footer' => [
+        'rights' => 'All rights reserved.',
+    ],
+];
