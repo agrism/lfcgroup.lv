@@ -27,9 +27,9 @@
                 <div class="hidden sm:flex items-center gap-4">
                     <!-- Language Switcher -->
                     <div class="flex items-center text-xs font-semibold border border-slate-200 rounded-md overflow-hidden bg-slate-100 p-0.5">
-                        <a href="{{ route('lang.switch', 'en') }}" class="px-2 py-1 rounded {{ app()->getLocale() == 'en' ? 'bg-white text-slate-900 shadow-xs' : 'text-slate-500 hover:text-slate-900' }}">EN</a>
-                        <a href="{{ route('lang.switch', 'lv') }}" class="px-2 py-1 rounded {{ app()->getLocale() == 'lv' ? 'bg-white text-slate-900 shadow-xs' : 'text-slate-500 hover:text-slate-900' }}">LV</a>
-                        <a href="{{ route('lang.switch', 'ru') }}" class="px-2 py-1 rounded {{ app()->getLocale() == 'ru' ? 'bg-white text-slate-900 shadow-xs' : 'text-slate-500 hover:text-slate-900' }}">RU</a>
+                        <a href="{{ route('index.locale', 'en') }}" class="px-2 py-1 rounded {{ app()->getLocale() == 'en' ? 'bg-white text-slate-900 shadow-xs' : 'text-slate-500 hover:text-slate-900' }}">EN</a>
+                        <a href="{{ route('index.locale', 'lv') }}" class="px-2 py-1 rounded {{ app()->getLocale() == 'lv' ? 'bg-white text-slate-900 shadow-xs' : 'text-slate-500 hover:text-slate-900' }}">LV</a>
+                        <a href="{{ route('index.locale', 'ru') }}" class="px-2 py-1 rounded {{ app()->getLocale() == 'ru' ? 'bg-white text-slate-900 shadow-xs' : 'text-slate-500 hover:text-slate-900' }}">RU</a>
                     </div>
 
                     <a href="#contactForm" class="inline-flex items-center justify-center px-4 py-2 rounded-md bg-slate-900 text-white hover:bg-slate-800 text-sm font-medium transition-colors">
@@ -40,9 +40,9 @@
                 <!-- Mobile menu button -->
                 <div class="flex items-center gap-2 md:hidden">
                     <div class="flex items-center text-xs font-semibold border border-slate-200 rounded-md overflow-hidden bg-slate-100 p-0.5">
-                        <a href="{{ route('lang.switch', 'en') }}" class="px-1.5 py-0.5 rounded {{ app()->getLocale() == 'en' ? 'bg-white text-slate-900' : 'text-slate-500' }}">EN</a>
-                        <a href="{{ route('lang.switch', 'lv') }}" class="px-1.5 py-0.5 rounded {{ app()->getLocale() == 'lv' ? 'bg-white text-slate-900' : 'text-slate-500' }}">LV</a>
-                        <a href="{{ route('lang.switch', 'ru') }}" class="px-1.5 py-0.5 rounded {{ app()->getLocale() == 'ru' ? 'bg-white text-slate-900' : 'text-slate-500' }}">RU</a>
+                        <a href="{{ route('index.locale', 'en') }}" class="px-1.5 py-0.5 rounded {{ app()->getLocale() == 'en' ? 'bg-white text-slate-900' : 'text-slate-500' }}">EN</a>
+                        <a href="{{ route('index.locale', 'lv') }}" class="px-1.5 py-0.5 rounded {{ app()->getLocale() == 'lv' ? 'bg-white text-slate-900' : 'text-slate-500' }}">LV</a>
+                        <a href="{{ route('index.locale', 'ru') }}" class="px-1.5 py-0.5 rounded {{ app()->getLocale() == 'ru' ? 'bg-white text-slate-900' : 'text-slate-500' }}">RU</a>
                     </div>
                     <button id="mobile-menu-btn" type="button" class="text-slate-600 hover:text-slate-900 p-2" aria-label="Toggle menu">
                         <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -50,6 +50,7 @@
                         </svg>
                     </button>
                 </div>
+
             </div>
         </div>
 
@@ -59,10 +60,17 @@
             <a href="#about" class="block py-1.5 text-sm font-medium text-slate-700 hover:text-slate-900">{{ __('site.nav.capabilities') }}</a>
             <a href="#process" class="block py-1.5 text-sm font-medium text-slate-700 hover:text-slate-900">{{ __('site.nav.approach') }}</a>
             <a href="#contact" class="block py-1.5 text-sm font-medium text-slate-700 hover:text-slate-900">{{ __('site.nav.contact') }}</a>
+            <div class="flex items-center gap-2 pt-2 border-t border-slate-100">
+                <span class="text-xs text-slate-500 mr-2">Language:</span>
+                <a href="{{ route('index.locale', 'en') }}" class="px-3 py-1 text-xs font-semibold rounded {{ app()->getLocale() == 'en' ? 'bg-slate-900 text-white' : 'bg-slate-100 text-slate-700' }}">EN</a>
+                <a href="{{ route('index.locale', 'lv') }}" class="px-3 py-1 text-xs font-semibold rounded {{ app()->getLocale() == 'lv' ? 'bg-slate-900 text-white' : 'bg-slate-100 text-slate-700' }}">LV</a>
+                <a href="{{ route('index.locale', 'ru') }}" class="px-3 py-1 text-xs font-semibold rounded {{ app()->getLocale() == 'ru' ? 'bg-slate-900 text-white' : 'bg-slate-100 text-slate-700' }}">RU</a>
+            </div>
             <a href="#contactForm" class="block text-center w-full py-2.5 rounded-md bg-slate-900 text-white font-medium text-sm mt-2">
                 {{ __('site.nav.request_consultation') }}
             </a>
         </div>
+
     </header>
 
     <main class="flex-grow">

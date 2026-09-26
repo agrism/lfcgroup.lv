@@ -15,8 +15,11 @@ class LanguageController extends Controller
             App::setLocale($locale);
             Session::put('locale', $locale);
             cookie()->queue('locale', $locale, 60 * 24 * 365);
+            
+            return redirect()->route('index.locale', ['locale' => $locale]);
         }
 
-        return redirect()->back();
+        return redirect()->route('index');
     }
 }
+
