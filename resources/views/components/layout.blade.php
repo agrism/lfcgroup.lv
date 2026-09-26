@@ -22,8 +22,8 @@
     <meta name="description" content="{{ __('site.meta.description') }}">
     <meta name="keywords" content="{{ __('site.meta.keywords') }}">
     
-    <link rel="stylesheet" href="https://rsms.me/inter/inter.css">
     @vite(['resources/css/app.css', 'resources/js/app.js'])
+
 </head>
 <body class="bg-slate-50 text-slate-900 antialiased font-sans min-h-screen flex flex-col selection:bg-slate-900 selection:text-white">
     {{$slot}}

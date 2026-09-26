@@ -4,8 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>@yield('title')</title>
-    <link rel="stylesheet" href="https://rsms.me/inter/inter.css">
     @vite(['resources/css/app.css', 'resources/js/app.js'])
+
 </head>
 <body class="bg-slate-50 text-slate-900 antialiased font-sans min-h-screen flex items-center justify-center p-4">
     <div class="max-w-md w-full bg-white border border-slate-200 rounded-xl shadow-sm p-8 text-center">

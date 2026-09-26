@@ -11,8 +11,9 @@ export default {
     theme: {
         extend: {
             fontFamily: {
-                sans: ['Inter', ...defaultTheme.fontFamily.sans],
+                sans: ['Inter Variable', 'Inter', ...defaultTheme.fontFamily.sans],
             },
+
             colors: {
                 corporate: {
                     50: '#f8fafc',
