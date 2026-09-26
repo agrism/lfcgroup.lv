@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="scroll-smooth">
 <head>
     @if(app()->isProduction())
         <!-- Google tag (gtag.js) -->
@@ -22,14 +22,14 @@
     <meta name="description"
           content="Leading provider of business intelligence automation, ERP systems integration, and data-driven solutions. Transform your operations with enterprise-grade process optimization.">
     <meta name="keywords"
-          content="business intelligence, data automation, ERP integration, process optimization, enterprise solutions, market analytics">
-    <meta property="og:title" content="Enterprise Intelligence Solutions">
-    <meta property="og:description"
-          content="Transform your business operations with automated data analytics and process optimization">
+          content="business intelligence, data automation, ERP integration, process optimization, enterprise solutions, market analytics, web scraping">
+    
     <link rel="stylesheet" href="https://rsms.me/inter/inter.css">
-    @vite('resources/css/app.css')
+    @vite(['resources/css/app.css', 'resources/js/app.js'])
 </head>
-<body class="bg-gray-100">
-{{$slot}}
+<body class="bg-slate-50 text-slate-900 antialiased font-sans min-h-screen flex flex-col selection:bg-slate-900 selection:text-white">
+    {{$slot}}
 </body>
 </html>
+
+
