@@ -2,29 +2,27 @@
     <!-- Top Header / Navigation -->
     <header class="bg-white border-b border-slate-200 sticky top-0 z-40">
         <div class="max-w-6xl mx-auto px-4 sm:px-6">
-            <div class="flex items-center justify-between h-18">
+            <div class="flex items-center justify-between h-16 sm:h-18">
                 <!-- Brand -->
-                <a href="{{ route('index') }}" class="flex items-center gap-3">
-                    <div class="w-8 h-8 rounded bg-slate-900 flex items-center justify-center text-white">
+                <a href="{{ route('index.locale', app()->getLocale()) }}" class="flex items-center gap-2.5 shrink-0">
+                    <div class="w-8 h-8 rounded bg-slate-900 flex items-center justify-center text-white shrink-0">
                         <svg class="w-4 h-4 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z" />
                         </svg>
                     </div>
-                    <div>
-                        <span class="font-bold text-slate-900 text-lg tracking-tight block leading-tight">{{ __('site.brand') }}</span>
-                    </div>
+                    <span class="font-bold text-slate-900 text-sm sm:text-base md:text-lg tracking-tight whitespace-nowrap">{{ __('site.brand') }}</span>
                 </a>
 
-                <!-- Nav links -->
-                <nav class="hidden md:flex items-center space-x-8 text-sm font-medium text-slate-600">
-                    <a href="#services" class="hover:text-slate-900 transition-colors">{{ __('site.nav.services') }}</a>
-                    <a href="#about" class="hover:text-slate-900 transition-colors">{{ __('site.nav.capabilities') }}</a>
-                    <a href="#process" class="hover:text-slate-900 transition-colors">{{ __('site.nav.approach') }}</a>
-                    <a href="#contact" class="hover:text-slate-900 transition-colors">{{ __('site.nav.contact') }}</a>
+                <!-- Nav links (Desktop) -->
+                <nav class="hidden lg:flex items-center space-x-7 text-sm font-medium text-slate-600">
+                    <a href="#services" class="hover:text-slate-900 transition-colors whitespace-nowrap">{{ __('site.nav.services') }}</a>
+                    <a href="#about" class="hover:text-slate-900 transition-colors whitespace-nowrap">{{ __('site.nav.capabilities') }}</a>
+                    <a href="#process" class="hover:text-slate-900 transition-colors whitespace-nowrap">{{ __('site.nav.approach') }}</a>
+                    <a href="#contact" class="hover:text-slate-900 transition-colors whitespace-nowrap">{{ __('site.nav.contact') }}</a>
                 </nav>
 
-                <!-- Language Switcher & CTA -->
-                <div class="hidden sm:flex items-center gap-4">
+                <!-- Desktop Actions: Language Switcher & CTA -->
+                <div class="hidden lg:flex items-center gap-4 shrink-0">
                     <!-- Language Switcher -->
                     <div class="flex items-center text-xs font-semibold border border-slate-200 rounded-md overflow-hidden bg-slate-100 p-0.5">
                         <a href="{{ route('index.locale', 'en') }}" class="px-2 py-1 rounded {{ app()->getLocale() == 'en' ? 'bg-white text-slate-900 shadow-xs' : 'text-slate-500 hover:text-slate-900' }}">EN</a>
@@ -32,46 +30,39 @@
                         <a href="{{ route('index.locale', 'ru') }}" class="px-2 py-1 rounded {{ app()->getLocale() == 'ru' ? 'bg-white text-slate-900 shadow-xs' : 'text-slate-500 hover:text-slate-900' }}">RU</a>
                     </div>
 
-                    <a href="#contactForm" class="inline-flex items-center justify-center px-4 py-2 rounded-md bg-slate-900 text-white hover:bg-slate-800 text-sm font-medium transition-colors">
+                    <a href="#contactForm" class="whitespace-nowrap inline-flex items-center justify-center px-4 py-2 rounded-md bg-slate-900 text-white hover:bg-slate-800 text-sm font-medium transition-colors">
                         {{ __('site.nav.request_consultation') }}
                     </a>
                 </div>
 
-                <!-- Mobile menu button -->
-                <div class="flex items-center gap-2 md:hidden">
+                <!-- Mobile / Tablet Right Controls -->
+                <div class="flex items-center gap-2.5 lg:hidden">
                     <div class="flex items-center text-xs font-semibold border border-slate-200 rounded-md overflow-hidden bg-slate-100 p-0.5">
-                        <a href="{{ route('index.locale', 'en') }}" class="px-1.5 py-0.5 rounded {{ app()->getLocale() == 'en' ? 'bg-white text-slate-900' : 'text-slate-500' }}">EN</a>
-                        <a href="{{ route('index.locale', 'lv') }}" class="px-1.5 py-0.5 rounded {{ app()->getLocale() == 'lv' ? 'bg-white text-slate-900' : 'text-slate-500' }}">LV</a>
-                        <a href="{{ route('index.locale', 'ru') }}" class="px-1.5 py-0.5 rounded {{ app()->getLocale() == 'ru' ? 'bg-white text-slate-900' : 'text-slate-500' }}">RU</a>
+                        <a href="{{ route('index.locale', 'en') }}" class="px-1.5 py-0.5 rounded {{ app()->getLocale() == 'en' ? 'bg-white text-slate-900 shadow-xs' : 'text-slate-500' }}">EN</a>
+                        <a href="{{ route('index.locale', 'lv') }}" class="px-1.5 py-0.5 rounded {{ app()->getLocale() == 'lv' ? 'bg-white text-slate-900 shadow-xs' : 'text-slate-500' }}">LV</a>
+                        <a href="{{ route('index.locale', 'ru') }}" class="px-1.5 py-0.5 rounded {{ app()->getLocale() == 'ru' ? 'bg-white text-slate-900 shadow-xs' : 'text-slate-500' }}">RU</a>
                     </div>
-                    <button id="mobile-menu-btn" type="button" class="text-slate-600 hover:text-slate-900 p-2" aria-label="Toggle menu">
+                    <button id="mobile-menu-btn" type="button" class="text-slate-700 hover:text-slate-900 p-1.5 focus:outline-none" aria-label="Toggle menu">
                         <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path>
                         </svg>
                     </button>
                 </div>
-
             </div>
         </div>
 
-        <!-- Mobile menu -->
-        <div id="mobile-menu" class="hidden md:hidden border-t border-slate-200 bg-white px-4 py-4 space-y-3">
+        <!-- Mobile / Tablet menu dropdown -->
+        <div id="mobile-menu" class="hidden lg:hidden border-t border-slate-200 bg-white px-4 py-4 space-y-3">
             <a href="#services" class="block py-1.5 text-sm font-medium text-slate-700 hover:text-slate-900">{{ __('site.nav.services') }}</a>
             <a href="#about" class="block py-1.5 text-sm font-medium text-slate-700 hover:text-slate-900">{{ __('site.nav.capabilities') }}</a>
             <a href="#process" class="block py-1.5 text-sm font-medium text-slate-700 hover:text-slate-900">{{ __('site.nav.approach') }}</a>
             <a href="#contact" class="block py-1.5 text-sm font-medium text-slate-700 hover:text-slate-900">{{ __('site.nav.contact') }}</a>
-            <div class="flex items-center gap-2 pt-2 border-t border-slate-100">
-                <span class="text-xs text-slate-500 mr-2">Language:</span>
-                <a href="{{ route('index.locale', 'en') }}" class="px-3 py-1 text-xs font-semibold rounded {{ app()->getLocale() == 'en' ? 'bg-slate-900 text-white' : 'bg-slate-100 text-slate-700' }}">EN</a>
-                <a href="{{ route('index.locale', 'lv') }}" class="px-3 py-1 text-xs font-semibold rounded {{ app()->getLocale() == 'lv' ? 'bg-slate-900 text-white' : 'bg-slate-100 text-slate-700' }}">LV</a>
-                <a href="{{ route('index.locale', 'ru') }}" class="px-3 py-1 text-xs font-semibold rounded {{ app()->getLocale() == 'ru' ? 'bg-slate-900 text-white' : 'bg-slate-100 text-slate-700' }}">RU</a>
-            </div>
             <a href="#contactForm" class="block text-center w-full py-2.5 rounded-md bg-slate-900 text-white font-medium text-sm mt-2">
                 {{ __('site.nav.request_consultation') }}
             </a>
         </div>
-
     </header>
+
 
     <main class="flex-grow">
         <!-- HERO SECTION -->
