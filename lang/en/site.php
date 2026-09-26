@@ -5,8 +5,8 @@ return [
     'tagline' => 'Solutions & Automation',
     'meta' => [
         'title' => 'Enterprise Intelligence Solutions',
-        'description' => 'Leading provider of business intelligence automation, ERP systems integration, and data-driven solutions. Transform your operations with enterprise-grade process optimization.',
-        'keywords' => 'business intelligence, data automation, ERP integration, process optimization, enterprise solutions, market analytics, web scraping',
+        'description' => 'Leading provider of business intelligence automation, AI process automation, ERP systems integration, and data-driven solutions. Transform your operations with enterprise-grade process optimization.',
+        'keywords' => 'business intelligence, AI process automation, LLM agents, data automation, ERP integration, process optimization, enterprise solutions, market analytics, web scraping',
     ],
     'nav' => [
         'services' => 'Services',
@@ -18,14 +18,14 @@ return [
     'hero' => [
         'eyebrow' => 'Enterprise Intelligence Solutions',
         'title' => 'Business Process Solutions',
-        'subtitle' => 'Accelerating business growth through intelligent automation and data-driven solutions.',
+        'subtitle' => 'Accelerating business growth through intelligent automation, AI-driven workflows, and data-driven solutions.',
         'cta_primary' => 'Request Consultation',
         'cta_secondary' => 'View Services',
         'pillars' => [
             'architecture_label' => 'Architecture',
             'architecture_desc' => 'Scalable Cloud Systems',
             'automation_label' => 'Automation',
-            'automation_desc' => 'End-to-End Workflows',
+            'automation_desc' => 'AI & End-to-End Workflows',
             'integration_label' => 'Integration',
             'integration_desc' => 'Enterprise ERP & APIs',
             'data_label' => 'Data Ingestion',
@@ -37,6 +37,27 @@ return [
         'title' => 'Tailored Solutions for Enterprise Needs',
         'inquire' => 'Inquire about this service',
         
+        'ai' => [
+            'title' => 'AI Process Automation',
+            'description' => 'Empower your business operations with intelligent LLM agents, cognitive document processing, and autonomous workflows:',
+            'features' => [
+                'Custom LLM & AI agent integrations',
+                'Intelligent document parsing & OCR (invoices, contracts, receipts)',
+                'Automated customer communication & email drafting',
+                'Predictive business analytics & forecasting',
+                'Natural language data querying & reporting',
+                'Autonomous workflow decision-making engines',
+                'AI-powered lead qualification & scoring',
+                'Automated content summarization & synthesis',
+                'Multi-modal data extraction (text, images, PDFs)',
+                'Custom AI fine-tuning on company knowledge base (RAG)',
+                'Automated compliance & anomaly detection',
+                'Intelligent voice & chat assistants for enterprise',
+                'Continuous self-improving automation models',
+                'Secure, private on-premise & cloud AI deployments',
+            ],
+        ],
+
         'scraping' => [
             'title' => 'Web Scraping Solutions',
             'description' => 'Transform unstructured web data into actionable business insights. Our advanced web scraping services deliver:',
@@ -129,7 +150,7 @@ return [
             [
                 'number' => '02',
                 'title' => 'Solution Architecture',
-                'desc' => 'Design of custom extraction pipelines, automation scripts, and API connectors.',
+                'desc' => 'Design of custom AI pipelines, automation scripts, and API connectors.',
             ],
             [
                 'number' => '03',
@@ -146,7 +167,7 @@ return [
     'contact' => [
         'eyebrow' => 'Get in Touch',
         'title' => 'Contact Our IT Experts',
-        'subtitle' => 'Discuss your business process automation, web scraping, or ERP integration requirements with our technical team.',
+        'subtitle' => 'Discuss your AI process automation, web scraping, or ERP integration requirements with our technical team.',
         'email_label' => 'Direct Email',
         'sla' => 'We respond to enterprise inquiries within one business day.',
         
@@ -155,6 +176,7 @@ return [
         'email' => 'Email',
         'service' => 'Service Required',
         'service_options' => [
+            'AI Process Automation' => 'AI Process Automation',
             'Web Scraping Solutions' => 'Web Scraping Solutions',
             'Business Process Automation' => 'Business Process Automation',
             'ERP Systems Integration' => 'ERP Systems Integration',

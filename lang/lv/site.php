@@ -5,8 +5,8 @@ return [
     'tagline' => 'Risinājumi un automatizācija',
     'meta' => [
         'title' => 'Enterprise Intelligence Solutions',
-        'description' => 'Vadošais biznesa inteliģences automatizācijas, ERP sistēmu integrācijas un datu vadītu risinājumu sniedzējs. Optimizējiet uzņēmuma procesus.',
-        'keywords' => 'biznesa inteliģence, datu automatizācija, ERP integrācija, procesu optimizācija, uzņēmumu risinājumi, tirgus analītika, tīmekļa datu ievākšana',
+        'description' => 'Vadošais AI procesu automatizācijas, biznesa inteliģences, ERP sistēmu integrācijas un datu vadītu risinājumu sniedzējs. Optimizējiet uzņēmuma procesus.',
+        'keywords' => 'AI procesu automatizācija, mākslīgais intelekts, LLM aģenti, biznesa inteliģence, datu automatizācija, ERP integrācija, procesu optimizācija, uzņēmumu risinājumi, tirgus analītika, tīmekļa datu ievākšana',
     ],
     'nav' => [
         'services' => 'Pakalpojumi',
@@ -18,14 +18,14 @@ return [
     'hero' => [
         'eyebrow' => 'Uzņēmuma inteliģences risinājumi',
         'title' => 'Biznesa procesu risinājumi',
-        'subtitle' => 'Biznesa izaugsmes veicināšana ar viedu automatizāciju un datu vadītiem risinājumiem.',
+        'subtitle' => 'Biznesa izaugsmes veicināšana ar viedu AI automatizāciju un datu vadītiem risinājumiem.',
         'cta_primary' => 'Pieteikt konsultāciju',
         'cta_secondary' => 'Skatīt pakalpojumus',
         'pillars' => [
             'architecture_label' => 'Arhitektūra',
             'architecture_desc' => 'Mērogojamas mākoņsistēmas',
             'automation_label' => 'Automatizācija',
-            'automation_desc' => 'Pilna cikla darbplūsmas',
+            'automation_desc' => 'AI un pilna cikla darbplūsmas',
             'integration_label' => 'Integrācija',
             'integration_desc' => 'Uzņēmumu ERP un API',
             'data_label' => 'Datu ievākšana',
@@ -37,6 +37,27 @@ return [
         'title' => 'Pielāgoti risinājumi uzņēmumu vajadzībām',
         'inquire' => 'Pieteikties šim pakalpojumam',
         
+        'ai' => [
+            'title' => 'AI procesu automatizācija',
+            'description' => 'Uzlabojiet sava uzņēmuma darbību ar viediem AI aģentiem, kognitīvo dokumentu apstrādi un autonomām darbplūsmām:',
+            'features' => [
+                'Pielāgotu LLM un AI aģentu integrācijas',
+                'Vieda dokumentu atpazīšana un OCR (rēķini, līgumi, pavadzīmes)',
+                'Automatizēta klientu komunikācija un e-pastu sagatavošana',
+                'Prognozējošā biznesa analītika un paredzēšana',
+                'Datu vaicājumi un atskaišu veidošana dabiskā valodā',
+                'Autonomas lēmumu pieņemšanas dzinēji darbplūsmās',
+                'Ar AI darbināta potenciālo klientu (leads) kvalifikācija',
+                'Automatizēta satura kopsavilkumu veidošana un sintēze',
+                'Multimodāla datu ieguve (teksts, attēli, PDF)',
+                'Pielāgota AI apmācība uzņēmuma zināšanu bāzē (RAG)',
+                'Automatizēta atbilstības un anomāliju noteikšana',
+                'Viedi balss un teksta asistenti uzņēmuma vajadzībām',
+                'Pašmācošies automatizācijas modeļi',
+                'Droša un privāta AI izvietošana (lokāli vai mākonī)',
+            ],
+        ],
+
         'scraping' => [
             'title' => 'Tīmekļa datu ievākšanas risinājumi',
             'description' => 'Pārvērtiet nestrukturētus tīmekļa datus praktiski izmantojamās biznesa atziņās. Mūsu modernie tīmekļa datu ievākšanas pakalpojumi nodrošina:',
@@ -129,7 +150,7 @@ return [
             [
                 'number' => '02',
                 'title' => 'Risinājuma arhitektūra',
-                'desc' => 'Pielāgotu datu ievākšanas konveijeru, automatizācijas skriptu un API savienotāju projektēšana.',
+                'desc' => 'Pielāgotu AI konveijeru, automatizācijas skriptu un API savienotāju projektēšana.',
             ],
             [
                 'number' => '03',
@@ -146,7 +167,7 @@ return [
     'contact' => [
         'eyebrow' => 'Sazināties',
         'title' => 'Sazinieties ar mūsu IT ekspertiem',
-        'subtitle' => 'Apspriediet savas biznesa procesu automatizācijas, datu ievākšanas vai ERP integrācijas prasības ar mūsu tehnisko komandu.',
+        'subtitle' => 'Apspriediet savas AI procesu automatizācijas, datu ievākšanas vai ERP integrācijas prasības ar mūsu tehnisko komandu.',
         'email_label' => 'Tiešais e-pasts',
         'sla' => 'Mēs atbildam uz uzņēmumu pieprasījumiem vienas darba dienas laikā.',
         
@@ -155,6 +176,7 @@ return [
         'email' => 'E-pasts',
         'service' => 'Nepieciešamais pakalpojums',
         'service_options' => [
+            'AI Process Automation' => 'AI procesu automatizācija',
             'Web Scraping Solutions' => 'Tīmekļa datu ievākšana (Web Scraping)',
             'Business Process Automation' => 'Biznesa procesu automatizācija',
             'ERP Systems Integration' => 'ERP sistēmu integrācija',

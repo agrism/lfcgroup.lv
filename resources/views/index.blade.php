@@ -206,7 +206,7 @@
             </div>
         </section>
 
-        <!-- SERVICES SECTION (3 PILLARS) -->
+        <!-- SERVICES SECTION (4 PILLARS) -->
         <section id="services" class="py-16 sm:py-20 bg-slate-50">
             <div class="max-w-6xl mx-auto px-4 sm:px-6">
                 
@@ -219,7 +219,33 @@
 
                 <div class="space-y-8">
                     
-                    <!-- Service 1: Web Scraping Solutions -->
+                    <!-- Service 1: AI Process Automation -->
+                    <div class="bg-white border border-slate-200 rounded-xl p-6 sm:p-8 shadow-sm">
+                        <div class="flex flex-col md:flex-row md:items-center justify-between gap-4 pb-6 border-b border-slate-100">
+                            <div>
+                                <h3 class="text-xl sm:text-2xl font-bold text-slate-900">{{ __('site.services.ai.title') }}</h3>
+                                <p class="text-slate-600 text-sm sm:text-base mt-2">
+                                    {{ __('site.services.ai.description') }}
+                                </p>
+                            </div>
+                            <button type="button" onclick="selectService('AI Process Automation')" class="inline-flex items-center text-sm font-semibold text-slate-900 hover:text-slate-600 transition-colors shrink-0 self-start md:self-center">
+                                {{ __('site.services.inquire') }} &rarr;
+                            </button>
+                        </div>
+
+                        <div class="mt-6">
+                            <ul class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-x-6 gap-y-3">
+                                @foreach(__('site.services.ai.features') as $feature)
+                                    <li class="flex items-start gap-2.5 text-sm text-slate-700">
+                                        <span class="w-1.5 h-1.5 rounded-full bg-slate-900 mt-2 shrink-0"></span>
+                                        <span>{{ $feature }}</span>
+                                    </li>
+                                @endforeach
+                            </ul>
+                        </div>
+                    </div>
+
+                    <!-- Service 2: Web Scraping Solutions -->
                     <div class="bg-white border border-slate-200 rounded-xl p-6 sm:p-8 shadow-sm">
                         <div class="flex flex-col md:flex-row md:items-center justify-between gap-4 pb-6 border-b border-slate-100">
                             <div>
@@ -245,7 +271,7 @@
                         </div>
                     </div>
 
-                    <!-- Service 2: Business Process Automation -->
+                    <!-- Service 3: Business Process Automation -->
                     <div class="bg-white border border-slate-200 rounded-xl p-6 sm:p-8 shadow-sm">
                         <div class="flex flex-col md:flex-row md:items-center justify-between gap-4 pb-6 border-b border-slate-100">
                             <div>
@@ -271,7 +297,7 @@
                         </div>
                     </div>
 
-                    <!-- Service 3: ERP Systems Integration -->
+                    <!-- Service 4: ERP Systems Integration -->
                     <div class="bg-white border border-slate-200 rounded-xl p-6 sm:p-8 shadow-sm">
                         <div class="flex flex-col md:flex-row md:items-center justify-between gap-4 pb-6 border-b border-slate-100">
                             <div>
@@ -414,6 +440,7 @@
                                     </label>
                                     <select id="subject" name="subject" required
                                             class="w-full px-3.5 py-2.5 border @error('subject') border-red-500 @else border-slate-300 @enderror rounded-md text-slate-900 focus:outline-none focus:ring-1 focus:ring-slate-900 focus:border-slate-900 text-sm bg-white">
+                                        <option value="AI Process Automation" @if(old('subject') == 'AI Process Automation') selected @endif>{{ __('site.contact.service_options.AI Process Automation') }}</option>
                                         <option value="Web Scraping Solutions" @if(old('subject') == 'Web Scraping Solutions') selected @endif>{{ __('site.contact.service_options.Web Scraping Solutions') }}</option>
                                         <option value="Business Process Automation" @if(old('subject') == 'Business Process Automation') selected @endif>{{ __('site.contact.service_options.Business Process Automation') }}</option>
                                         <option value="ERP Systems Integration" @if(old('subject') == 'ERP Systems Integration') selected @endif>{{ __('site.contact.service_options.ERP Systems Integration') }}</option>
