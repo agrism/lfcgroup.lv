@@ -23,11 +23,65 @@
 
                 <!-- Desktop Actions: Language Switcher & CTA -->
                 <div class="hidden lg:flex items-center gap-4 shrink-0">
-                    <!-- Language Switcher -->
-                    <div class="flex items-center text-xs font-semibold border border-slate-200 rounded-md overflow-hidden bg-slate-100 p-0.5">
-                        <a href="{{ route('index.locale', 'en') }}" class="px-2 py-1 rounded {{ app()->getLocale() == 'en' ? 'bg-white text-slate-900 shadow-xs' : 'text-slate-500 hover:text-slate-900' }}">EN</a>
-                        <a href="{{ route('index.locale', 'lv') }}" class="px-2 py-1 rounded {{ app()->getLocale() == 'lv' ? 'bg-white text-slate-900 shadow-xs' : 'text-slate-500 hover:text-slate-900' }}">LV</a>
-                        <a href="{{ route('index.locale', 'ru') }}" class="px-2 py-1 rounded {{ app()->getLocale() == 'ru' ? 'bg-white text-slate-900 shadow-xs' : 'text-slate-500 hover:text-slate-900' }}">RU</a>
+                    <!-- Language Dropdown (Globe + Flags) -->
+                    <div class="relative">
+                        <button id="lang-dropdown-btn" type="button" class="inline-flex items-center gap-2 px-3 py-2 rounded-md border border-slate-200 bg-white hover:bg-slate-50 text-slate-700 hover:text-slate-900 text-xs font-semibold shadow-xs transition-colors cursor-pointer" aria-label="Select language">
+                            <svg class="w-4 h-4 text-slate-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <circle cx="12" cy="12" r="10" stroke-width="1.8"/>
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" d="M2 12h20M12 2a15.3 15.3 0 014 10 15.3 15.3 0 01-4 10 15.3 15.3 0 01-4-10 15.3 15.3 0 014-10z"/>
+                            </svg>
+                            
+                            @if(app()->getLocale() == 'lv')
+                                <svg class="w-4 h-3 rounded-[2px] shadow-xs border border-slate-200/80 shrink-0" viewBox="0 0 640 480"><rect width="640" height="480" fill="#9e3039"/><rect y="192" width="640" height="96" fill="#ffffff"/></svg>
+                                <span>LV</span>
+                            @elseif(app()->getLocale() == 'ru')
+                                <svg class="w-4 h-3 rounded-[2px] shadow-xs border border-slate-200/80 shrink-0" viewBox="0 0 640 480"><rect width="640" height="160" fill="#ffffff"/><rect y="160" width="640" height="160" fill="#0039a6"/><rect y="320" width="640" height="160" fill="#d52b1e"/></svg>
+                                <span>RU</span>
+                            @else
+                                <svg class="w-4 h-3 rounded-[2px] shadow-xs border border-slate-200/80 shrink-0" viewBox="0 0 640 480"><path fill="#012169" d="M0 0h640v480H0z"/><path fill="#fff" d="m75 0 245 180L565 0h75v60L435 240l205 180v60h-75L320 300 75 480H0v-60l205-180L0 60V0h75z"/><path fill="#c8102e" d="m424 288 216 156v36l-265-192h49zm-208-96L0 36V0l265 192h-49zm360-156-216 156h49L640 36V0h-64zm-512 360 216-156h-49L0 444v36h64z"/><path fill="#fff" d="M240 0h160v480H240zM0 160h640v160H0z"/><path fill="#c8102e" d="M266 0h108v480H266zM0 186h640v108H0z"/></svg>
+                                <span>EN</span>
+                            @endif
+
+                            <svg class="w-3.5 h-3.5 text-slate-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
+                            </svg>
+                        </button>
+
+                        <!-- Dropdown menu -->
+                        <div id="lang-dropdown-menu" class="hidden absolute right-0 mt-1.5 w-44 bg-white border border-slate-200 rounded-lg shadow-lg py-1.5 z-50">
+                            <!-- English -->
+                            <a href="{{ route('index.locale', 'en') }}" class="flex items-center justify-between px-3.5 py-2 text-xs font-medium {{ app()->getLocale() == 'en' ? 'bg-slate-50 text-slate-900 font-bold' : 'text-slate-700 hover:bg-slate-50 hover:text-slate-900' }}">
+                                <span class="flex items-center gap-2.5">
+                                    <svg class="w-4 h-3 rounded-[2px] shadow-xs border border-slate-200/80 shrink-0" viewBox="0 0 640 480"><path fill="#012169" d="M0 0h640v480H0z"/><path fill="#fff" d="m75 0 245 180L565 0h75v60L435 240l205 180v60h-75L320 300 75 480H0v-60l205-180L0 60V0h75z"/><path fill="#c8102e" d="m424 288 216 156v36l-265-192h49zm-208-96L0 36V0l265 192h-49zm360-156-216 156h49L640 36V0h-64zm-512 360 216-156h-49L0 444v36h64z"/><path fill="#fff" d="M240 0h160v480H240zM0 160h640v160H0z"/><path fill="#c8102e" d="M266 0h108v480H266zM0 186h640v108H0z"/></svg>
+                                    <span>English</span>
+                                </span>
+                                @if(app()->getLocale() == 'en')
+                                    <svg class="w-3.5 h-3.5 text-slate-900" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7"/></svg>
+                                @endif
+                            </a>
+
+                            <!-- Latviešu -->
+                            <a href="{{ route('index.locale', 'lv') }}" class="flex items-center justify-between px-3.5 py-2 text-xs font-medium {{ app()->getLocale() == 'lv' ? 'bg-slate-50 text-slate-900 font-bold' : 'text-slate-700 hover:bg-slate-50 hover:text-slate-900' }}">
+                                <span class="flex items-center gap-2.5">
+                                    <svg class="w-4 h-3 rounded-[2px] shadow-xs border border-slate-200/80 shrink-0" viewBox="0 0 640 480"><rect width="640" height="480" fill="#9e3039"/><rect y="192" width="640" height="96" fill="#ffffff"/></svg>
+                                    <span>Latviešu</span>
+                                </span>
+                                @if(app()->getLocale() == 'lv')
+                                    <svg class="w-3.5 h-3.5 text-slate-900" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7"/></svg>
+                                @endif
+                            </a>
+
+                            <!-- Русский -->
+                            <a href="{{ route('index.locale', 'ru') }}" class="flex items-center justify-between px-3.5 py-2 text-xs font-medium {{ app()->getLocale() == 'ru' ? 'bg-slate-50 text-slate-900 font-bold' : 'text-slate-700 hover:bg-slate-50 hover:text-slate-900' }}">
+                                <span class="flex items-center gap-2.5">
+                                    <svg class="w-4 h-3 rounded-[2px] shadow-xs border border-slate-200/80 shrink-0" viewBox="0 0 640 480"><rect width="640" height="160" fill="#ffffff"/><rect y="160" width="640" height="160" fill="#0039a6"/><rect y="320" width="640" height="160" fill="#d52b1e"/></svg>
+                                    <span>Русский</span>
+                                </span>
+                                @if(app()->getLocale() == 'ru')
+                                    <svg class="w-3.5 h-3.5 text-slate-900" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7"/></svg>
+                                @endif
+                            </a>
+                        </div>
                     </div>
 
                     <a href="#contactForm" class="whitespace-nowrap inline-flex items-center justify-center px-4 py-2 rounded-md bg-slate-900 text-white hover:bg-slate-800 text-sm font-medium transition-colors">
@@ -37,17 +91,58 @@
 
                 <!-- Mobile / Tablet Right Controls -->
                 <div class="flex items-center gap-2.5 lg:hidden">
-                    <div class="flex items-center text-xs font-semibold border border-slate-200 rounded-md overflow-hidden bg-slate-100 p-0.5">
-                        <a href="{{ route('index.locale', 'en') }}" class="px-1.5 py-0.5 rounded {{ app()->getLocale() == 'en' ? 'bg-white text-slate-900 shadow-xs' : 'text-slate-500' }}">EN</a>
-                        <a href="{{ route('index.locale', 'lv') }}" class="px-1.5 py-0.5 rounded {{ app()->getLocale() == 'lv' ? 'bg-white text-slate-900 shadow-xs' : 'text-slate-500' }}">LV</a>
-                        <a href="{{ route('index.locale', 'ru') }}" class="px-1.5 py-0.5 rounded {{ app()->getLocale() == 'ru' ? 'bg-white text-slate-900 shadow-xs' : 'text-slate-500' }}">RU</a>
+                    <!-- Mobile Language Dropdown -->
+                    <div class="relative">
+                        <button id="lang-mobile-dropdown-btn" type="button" class="inline-flex items-center gap-1.5 px-2.5 py-1.5 rounded-md border border-slate-200 bg-white hover:bg-slate-50 text-slate-700 text-xs font-semibold shadow-xs cursor-pointer" aria-label="Select language">
+                            <svg class="w-3.5 h-3.5 text-slate-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <circle cx="12" cy="12" r="10" stroke-width="1.8"/>
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" d="M2 12h20M12 2a15.3 15.3 0 014 10 15.3 15.3 0 01-4 10 15.3 15.3 0 01-4-10 15.3 15.3 0 014-10z"/>
+                            </svg>
+                            @if(app()->getLocale() == 'lv')
+                                <svg class="w-3.5 h-2.5 rounded-[1px] shadow-xs shrink-0" viewBox="0 0 640 480"><rect width="640" height="480" fill="#9e3039"/><rect y="192" width="640" height="96" fill="#ffffff"/></svg>
+                                <span>LV</span>
+                            @elseif(app()->getLocale() == 'ru')
+                                <svg class="w-3.5 h-2.5 rounded-[1px] shadow-xs shrink-0" viewBox="0 0 640 480"><rect width="640" height="160" fill="#ffffff"/><rect y="160" width="640" height="160" fill="#0039a6"/><rect y="320" width="640" height="160" fill="#d52b1e"/></svg>
+                                <span>RU</span>
+                            @else
+                                <svg class="w-3.5 h-2.5 rounded-[1px] shadow-xs shrink-0" viewBox="0 0 640 480"><path fill="#012169" d="M0 0h640v480H0z"/><path fill="#fff" d="m75 0 245 180L565 0h75v60L435 240l205 180v60h-75L320 300 75 480H0v-60l205-180L0 60V0h75z"/><path fill="#c8102e" d="m424 288 216 156v36l-265-192h49zm-208-96L0 36V0l265 192h-49zm360-156-216 156h49L640 36V0h-64zm-512 360 216-156h-49L0 444v36h64z"/><path fill="#fff" d="M240 0h160v480H240zM0 160h640v160H0z"/><path fill="#c8102e" d="M266 0h108v480H266zM0 186h640v108H0z"/></svg>
+                                <span>EN</span>
+                            @endif
+                            <svg class="w-3 h-3 text-slate-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+                        </button>
+                        
+                        <div id="lang-mobile-dropdown-menu" class="hidden absolute right-0 mt-1.5 w-40 bg-white border border-slate-200 rounded-lg shadow-lg py-1 z-50">
+                            <a href="{{ route('index.locale', 'en') }}" class="flex items-center justify-between px-3 py-2 text-xs font-medium {{ app()->getLocale() == 'en' ? 'bg-slate-50 text-slate-900 font-bold' : 'text-slate-700 hover:bg-slate-50' }}">
+                                <span class="flex items-center gap-2">
+                                    <svg class="w-3.5 h-2.5 rounded-[1px] shrink-0" viewBox="0 0 640 480"><path fill="#012169" d="M0 0h640v480H0z"/><path fill="#fff" d="m75 0 245 180L565 0h75v60L435 240l205 180v60h-75L320 300 75 480H0v-60l205-180L0 60V0h75z"/><path fill="#c8102e" d="m424 288 216 156v36l-265-192h49zm-208-96L0 36V0l265 192h-49zm360-156-216 156h49L640 36V0h-64zm-512 360 216-156h-49L0 444v36h64z"/><path fill="#fff" d="M240 0h160v480H240zM0 160h640v160H0z"/><path fill="#c8102e" d="M266 0h108v480H266zM0 186h640v108H0z"/></svg>
+                                    <span>English</span>
+                                </span>
+                                @if(app()->getLocale() == 'en')<svg class="w-3.5 h-3.5 text-slate-900" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7"/></svg>@endif
+                            </a>
+                            <a href="{{ route('index.locale', 'lv') }}" class="flex items-center justify-between px-3 py-2 text-xs font-medium {{ app()->getLocale() == 'lv' ? 'bg-slate-50 text-slate-900 font-bold' : 'text-slate-700 hover:bg-slate-50' }}">
+                                <span class="flex items-center gap-2">
+                                    <svg class="w-3.5 h-2.5 rounded-[1px] shrink-0" viewBox="0 0 640 480"><rect width="640" height="480" fill="#9e3039"/><rect y="192" width="640" height="96" fill="#ffffff"/></svg>
+                                    <span>Latviešu</span>
+                                </span>
+                                @if(app()->getLocale() == 'lv')<svg class="w-3.5 h-3.5 text-slate-900" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7"/></svg>@endif
+                            </a>
+                            <a href="{{ route('index.locale', 'ru') }}" class="flex items-center justify-between px-3 py-2 text-xs font-medium {{ app()->getLocale() == 'ru' ? 'bg-slate-50 text-slate-900 font-bold' : 'text-slate-700 hover:bg-slate-50' }}">
+                                <span class="flex items-center gap-2">
+                                    <svg class="w-3.5 h-2.5 rounded-[1px] shrink-0" viewBox="0 0 640 480"><rect width="640" height="160" fill="#ffffff"/><rect y="160" width="640" height="160" fill="#0039a6"/><rect y="320" width="640" height="160" fill="#d52b1e"/></svg>
+                                    <span>Русский</span>
+                                </span>
+                                @if(app()->getLocale() == 'ru')<svg class="w-3.5 h-3.5 text-slate-900" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7"/></svg>@endif
+                            </a>
+                        </div>
                     </div>
+
                     <button id="mobile-menu-btn" type="button" class="text-slate-700 hover:text-slate-900 p-1.5 focus:outline-none" aria-label="Toggle menu">
                         <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path>
                         </svg>
                     </button>
                 </div>
+
             </div>
         </div>
 
