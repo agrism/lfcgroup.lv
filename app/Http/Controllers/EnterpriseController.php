@@ -7,7 +7,7 @@ use Illuminate\Support\Facades\App;
 use Illuminate\Support\Facades\Session;
 use Illuminate\View\View;
 
-class IndexController extends Controller
+class EnterpriseController extends Controller
 {
     public function __invoke(Request $request, ?string $locale = null): View
     {
@@ -20,6 +20,6 @@ class IndexController extends Controller
         Session::put('locale', $activeLocale);
         cookie()->queue('locale', $activeLocale, 60 * 24 * 365);
 
-        return view('index');
+        return view('enterprise');
     }
 }

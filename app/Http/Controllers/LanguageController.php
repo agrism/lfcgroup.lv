@@ -16,10 +16,14 @@ class LanguageController extends Controller
             Session::put('locale', $locale);
             cookie()->queue('locale', $locale, 60 * 24 * 365);
             
+            $previousUrl = url()->previous();
+            if (str_contains($previousUrl, '/enterprise')) {
+                return redirect()->route('enterprise.locale', ['locale' => $locale]);
+            }
+
             return redirect()->route('index.locale', ['locale' => $locale]);
         }
 
         return redirect()->route('index');
     }
 }
-

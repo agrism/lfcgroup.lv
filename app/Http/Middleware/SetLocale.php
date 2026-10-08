@@ -14,10 +14,10 @@ class SetLocale
         $locale = $request->route('locale') 
             ?? Session::get('locale') 
             ?? $request->cookie('locale') 
-            ?? config('app.locale', 'en');
+            ?? config('app.locale', 'lv');
 
         if (!in_array($locale, ['en', 'lv', 'ru'])) {
-            $locale = config('app.locale', 'en');
+            $locale = config('app.locale', 'lv');
         }
 
         App::setLocale($locale);

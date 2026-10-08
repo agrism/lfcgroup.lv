@@ -1,3 +1,8 @@
+@props([
+    'title' => null,
+    'description' => null,
+    'keywords' => null,
+])
 <!DOCTYPE html>
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}" class="scroll-smooth">
 <head>
@@ -18,9 +23,9 @@
     @endif
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>{{ __('site.meta.title') }}</title>
-    <meta name="description" content="{{ __('site.meta.description') }}">
-    <meta name="keywords" content="{{ __('site.meta.keywords') }}">
+    <title>{{ $title ?? __('site.meta.title') }}</title>
+    <meta name="description" content="{{ $description ?? __('site.meta.description') }}">
+    <meta name="keywords" content="{{ $keywords ?? __('site.meta.keywords') }}">
     
     @vite(['resources/css/app.css', 'resources/js/app.js'])
 
@@ -29,6 +34,3 @@
     {{$slot}}
 </body>
 </html>
-
-
-
