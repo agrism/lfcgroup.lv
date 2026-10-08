@@ -158,7 +158,7 @@ return [
         'name_placeholder' => 'Piemēram, Jānis Bērziņš',
         'email' => 'Tavs e-pasts',
         'email_placeholder' => 'janis@uznemums.lv',
-        'phone' => 'Telefona numurs / WhatsApp (nav obligāts)',
+        'phone' => 'Telefons vai WhatsApp',
         'phone_placeholder' => '+371 26645999',
         'service' => 'Nepieciešamais pakalpojums',
         'service_options' => [

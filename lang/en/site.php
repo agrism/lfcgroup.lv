@@ -158,7 +158,7 @@ return [
         'name_placeholder' => 'e.g. John Doe',
         'email' => 'Your Email',
         'email_placeholder' => 'john@company.com',
-        'phone' => 'Phone / WhatsApp (optional)',
+        'phone' => 'Phone or WhatsApp',
         'phone_placeholder' => '+371 26645999',
         'service' => 'Service Needed',
         'service_options' => [

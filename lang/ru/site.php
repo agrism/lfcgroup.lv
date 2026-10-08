@@ -158,7 +158,7 @@ return [
         'name_placeholder' => 'Например, Иван Иванов',
         'email' => 'Ваш E-mail',
         'email_placeholder' => 'ivan@company.com',
-        'phone' => 'Номер телефона / WhatsApp (необязательно)',
+        'phone' => 'Телефон или WhatsApp',
         'phone_placeholder' => '+371 26645999',
         'service' => 'Необходимая услуга',
         'service_options' => [
